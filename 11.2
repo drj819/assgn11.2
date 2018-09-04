@@ -1,0 +1,53 @@
+Assignment 11.2
+
+getwd()
+p='C:/Users/Admin/Documents/acd'
+setwd(p)
+list.files()
+
+list.dirs()
+library(data.table)
+data=read.table("bank.csv", header=T, sep=',')
+
+View(data)
+
+read.csv("bank.csv",header=T,sep=",")
+
+
+library(readr)
+bank_full <- read_delim("C:/Users/Admin/Documents/acd/bank.csv", 
+                        ";", escape_double = FALSE, trim_ws = TRUE)
+
+head(bank_full)
+str(bank_full) 
+summary(bank_full)
+
+(a)
+
+with(bank_full, chisq.test( job, default))
+with(bank_full, table( job, default) )
+
+
+(b)
+with(bank_full, chisq.test(duration,housing))
+with(bank_full, table( duration,housing) )
+
+
+(C)
+with(bank_additional_full, prop.table(table(cons.price.idx,cons.conf.idx)))
+
+
+(d)
+with(bank_additional_full, chisq.test( job,emp.var.rate))
+with(bank_additional_full, table( job,emp.var.rate) )
+
+(e)
+with(bank_additional_full, chisq.test( job,emp.var.rate))
+with(bank_additional_full, table( job,emp.var.rate) )
+
+(f)
+with(bank_additional_full, chisq.test( education,emp.var.rate))
+with(bank_additional_full, table( education, emp.var.rate) )
+
+
+
